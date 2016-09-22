@@ -20,9 +20,10 @@ class Repos extends Component{
             })
     }
     render(){
-        let repos =  this.state.repositories.map((repo)=>(
-            <li key={repo.id}><Link to={"/repos/details/"+repo.name}>{repo.name}</Link></li>
-        ))
+        let repos =  this.state.repositories.map((repo)=>{
+            console.log(repo);
+            return (<li key={repo.id}><Link to={"/repos/details/"+repo.name}>{repo.name}</Link></li>
+        )})
         return (
             <div>
                 <h1>Github Repos</h1>

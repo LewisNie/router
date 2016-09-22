@@ -19,6 +19,12 @@ class RepoDetails extends Component{
             })
     }
     componentDidMount(){
+        console.log(this.props);
+        let repo_name = this.props.params.repo_name;
+        this.fetchData(repo_name);
+    }
+
+    componentWillReceiveProps(nextProps){
         let repo_name = nextProps.params.repo_name;
         this.fetchData(repo_name);
     }
@@ -26,7 +32,7 @@ class RepoDetails extends Component{
     render(){
         let stars = [];
         for(var i = 0; i<this.state.repository.stargazers_count;i++){
-            stars.push('');
+            stars.push('♣');
         }
         return (
             <div>
